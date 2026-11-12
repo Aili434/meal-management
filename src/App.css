@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
+
+:root {
+  --bg-outer: #e7e4df;
+  --bg-base: #f6f4f0;
+  --bg-card: #ffffff;
+  --bg-soft: #efece6;
+  --text-main: #2a2725;
+  --text-sub: #746d67;
+  --accent-sage: #4a7c66;
+  --accent-sage-light: #e8f2ed;
+  --accent-coral: #d46a4e;
+  --accent-coral-light: #fceee9;
+  --accent-plum: #7a5c85;
+  --accent-plum-light: #f3edf5;
+  --accent-amber: #c98a2c;
+  --border-light: #e6e1d8;
+  --shadow-card: 0 4px 18px rgba(42, 39, 37, 0.05);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  background-color: var(--bg-outer);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.app-shell {
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--bg-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.07);
+}
+
+/* Header */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(246, 244, 240, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #568c74, #3d6956);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(74, 124, 102, 0.28);
+}
+
+.app-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.app-date {
+  font-size: 0.72rem;
+  color: var(--text-sub);
+  margin: 0;
+}
+
+.goal-chip {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--accent-sage-light);
+  color: var(--accent-sage);
+  border: 1px solid #cde2d7;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 16px 16px calc(92px + var(--safe-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(230, 225, 216, 0.7);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Score & Calorie Hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.score-ring {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.score-ring-inner {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.score-num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--accent-sage);
+}
+
+.score-unit {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.cal-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cal-remain-box {
+  background: var(--bg-base);
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.cal-remain-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.cal-remain-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.cal-remain-val span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-left: 3px;
+}
+
+.cal-breakdown {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: var(--text-sub);
+  padding: 0 2px;
+}
+
+.cal-breakdown strong {
+  color: var(--text-main);
+}
+
+/* PFC Bars */
+.pfc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.pfc-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.bar-track {
+  height: 8px;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Coach Advice Box */
+.coach-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #f3f8f5, #eef5f1);
+  border: 1px solid #d3e5db;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.coach-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: var(--accent-sage);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.coach-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-sage);
+  margin: 0 0 3px;
+}
+
+.coach-text {
+  font-size: 0.82rem;
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Form Elements */
+.segmented {
+  display: flex;
+  background: var(--bg-soft);
+  padding: 4px;
+  border-radius: 13px;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.seg-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 7px 6px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.seg-btn.active {
+  background: #fff;
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.preset-chip {
+  border: 1px solid var(--border-light);
+  background: #faf9f6;
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.preset-chip:active {
+  background: var(--accent-sage-light);
+  border-color: var(--accent-sage);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.input-full {
+  grid-column: 1 / -1;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 3px;
+}
+
+.text-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 11px;
+  border: 1.5px solid var(--border-light);
+  background: #faf9f6;
+  padding: 0 11px;
+  font-size: 0.86rem;
+  font-family: inherit;
+  color: var(--text-main);
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: var(--accent-sage);
+  background: #fff;
+}
+
+.primary-btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  border: none;
+  background: var(--accent-sage);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(74, 124, 102, 0.25);
+}
+
+.primary-btn.coral {
+  background: var(--accent-coral);
+  box-shadow: 0 4px 14px rgba(212, 106, 78, 0.25);
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+}
+
+/* Log Items */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #faf8f5;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+}
+
+.log-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 3px;
+}
+
+.log-tag.meal {
+  background: var(--accent-sage-light);
+  color: var(--accent-sage);
+}
+
+.log-tag.workout {
+  background: var(--accent-coral-light);
+  color: var(--accent-coral);
+}
+
+.log-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.log-meta {
+  font-size: 0.74rem;
+  color: var(--text-sub);
+  margin: 2px 0 0;
+}
+
+.del-btn {
+  background: none;
+  border: none;
+  color: #aba39b;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.del-btn:active {
+  background: #eee9e2;
+  color: var(--accent-coral);
+}
+
+/* Workout Volume Summary */
+.volume-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.vol-cell {
+  background: var(--bg-base);
+  border-radius: 13px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.vol-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--accent-coral);
+}
+
+.vol-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+/* Condition / Body Metrics */
+.water-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.water-cups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.cup-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1.5px solid #cfe0eb;
+  background: #f5f9fc;
+  color: #6b9ac4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cup-btn.filled {
+  background: #4b8ec2;
+  border-color: #4b8ec2;
+  color: #fff;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  padding: 8px 8px calc(8px + var(--safe-bottom));
+  z-index: 30;
+}
+
+.nav-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text-sub);
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.nav-btn.active {
+  color: var(--accent-sage);
+}
+コードで処理、分析しました
